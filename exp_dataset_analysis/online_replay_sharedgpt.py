@@ -11,7 +11,6 @@ from itertools import groupby
 from datetime import datetime
 import logging
 from typing import Optional, Dict, Any, List
-import hashlib
 import argparse
 import openai
 from num2words import num2words
@@ -26,6 +25,7 @@ from collections import Counter
 import uuid
 import signal
 from datasets import load_dataset
+from transformers import AutoTokenizer
 
 # 全局变量
 global_result_collector = None
@@ -241,14 +241,18 @@ def process_log_line(line: str, sample_start: float = 0.0,
         return None
 
 def process_dataset_item(item: dict, sample_start: float = 0.0, sample_end: float = 1.0, 
-                         ep_config: dict = None) -> Optional[ReplayJob]:
+                         ep_config: dict = None,tokenizer: AutoTokenizer = None) -> Optional[ReplayJob]:
     """Process a single dataset item and convert it to a ReplayJob."""
     try:
-        conversation_id = str(uuid.uuid4())
+        if ep_config.get('dataset') == 'ajibawa-2023/Python-Code-23k-ShareGPT':
+            conversation_id = item.get('id', '')
+        else:
+            conversation_id = str(uuid.uuid4())
         if not should_process_conversation(conversation_id, sample_start, sample_end):
             logger.debug(f"Skipping conversation {conversation_id} due to sampling range [{sample_start}, {sample_end}) - hash: {hashlib.md5(conversation_id.encode()).hexdigest()[:8]}")
             return None
 
+        # ep_config 设置
         if ep_config is None:
             ep_config = {
                 "api_base": "http://localhost:8080/v1",
@@ -256,19 +260,42 @@ def process_dataset_item(item: dict, sample_start: float = 0.0, sample_end: floa
                 "model": "Nitral-AI/Captain-Eris_Violet-V0.420-12B",
                 "use_chat": True
             }
+        # 构造请求头
         headers = {
             'Authorization': f'Bearer {ep_config["api_key"]}',
             'Content-Type': 'application/json'
         }
+        # 处理数据
         if ep_config.get('dataset') == 'simplescaling/s1K':
-            messages = [
-                {"role": "user", "content": item["question"]},
-                {"role": "assistant", "content": item["solution"]}
-            ]
-            # print("messages:", messages)
-        else:
+            messages = [{"role": "user", "content": item["question"]}]
+        elif ep_config.get('dataset') == 'ajibawa-2023/Python-Code-23k-ShareGPT':
             conversations = item.get('conversations', [])
-            messages = [{"role": conv["from"], "content": conv["value"]} for conv in conversations]
+            messages = [{"role": conv["from"], "content": conv["value"]} for conv in conversations  if conv["from"] == "human"]
+
+        elif ep_config.get('dataset') == 'shibing624/sharegpt_gpt4':
+            conversations = item.get('conversations', [])
+
+            # 去掉最后一个gpt的回复
+            if conversations and conversations[-1]["from"] == "gpt":
+                conversations = conversations[:-1]
+            
+            messages = []
+            for conv in conversations:
+                if conv["from"] == "human":
+                    messages.append({"role": "user", "content": conv["value"]})
+                elif conv["from"] == "gpt":
+                    messages.append({"role": "gpt", "content": conv["value"]})
+        
+                # 添加token长度检查
+        if tokenizer and messages:
+            # 合并所有消息内容计算token数
+            prompt_text = '\n'.join([msg['content'] for msg in messages])
+            token_count = len(tokenizer.encode(prompt_text))
+            if token_count > 7000:
+                logger.info(f"Skipping request with token count {token_count} (exceeds 7000)")
+                return None
+
+        # 选择请求模式
         if ep_config.get("use_chat", True):
             if not messages:
                 logger.warning(f"Empty messages for conversation {conversation_id}, skipping")
@@ -298,7 +325,7 @@ def process_dataset_item(item: dict, sample_start: float = 0.0, sample_end: floa
         return None
     
 def log_reader_thread(input_file: str, preload_time: int = 180, sample_start: float = 0.0, 
-                      sample_end: float = 1.0, ep_config: dict = None, dataset:str="shibing624/sharegpt_gpt4"):
+                      sample_end: float = 1.0, ep_config: dict = None, dataset:str="shibing624/sharegpt_gpt4",tokenizer: AutoTokenizer = None):
     """Thread A: Read log file and add jobs to the queue."""
     try:
         logger.info(f"Starting log reader thread with {preload_time} seconds preload time and sample range [{sample_start*100:.1f}%, {sample_end*100:.1f}%)")
@@ -310,7 +337,7 @@ def log_reader_thread(input_file: str, preload_time: int = 180, sample_start: fl
             ds = load_dataset(dataset, split="train")
             logger.info("Dataset loaded successfully")
             for item in ds:
-                job = process_dataset_item(item, sample_start, sample_end, ep_config)
+                job = process_dataset_item(item, sample_start, sample_end, ep_config,tokenizer)
                 if job:
                     job_queue.put(job)
                     job_count += 1
@@ -418,9 +445,10 @@ async def send_request(client, job):
             
             response = await client.chat.completions.create(
                 model=job.body.get("model"),
-                messages=[
-                    {"role": "user", "content": job.body.get("messages")}
-                ],
+                # messages=[
+                #     {"role": "user", "content": job.body.get("messages")}
+                # ],
+                messages=job.body.get("messages", []),
                 max_tokens=job.body.get("max_tokens", 200),
                 temperature=0,
                 stream=True,
@@ -744,6 +772,7 @@ async def replay_by_timestamp(client, result_collector, start_timestamp, start_t
     except Exception as e:
         logger.error(f"Error in timestamp replay: {e}")
         raise
+
 
 async def replay_by_qps(client, result_collector, target_qps, round_duration,
                          max_rounds=None, detailed_logs=False, cv=0.0):
@@ -1104,6 +1133,7 @@ def main(args, sample_start, sample_end):
             "max_tokens": args.max_tokens,
             "dataset": args.dataset
         }
+        tokenizer = AutoTokenizer.from_pretrained(ep_config["model"])
         
         # 创建全局结果收集器，用于在程序退出时保存结果
         global global_result_collector
@@ -1124,7 +1154,7 @@ def main(args, sample_start, sample_end):
         
         # Start the log reader thread
         reader_thread = threading.Thread(target=log_reader_thread,
-                                args=(args.input, args.preload_time, sample_start, sample_end, ep_config, args.dataset))
+                                args=(args.input, args.preload_time, sample_start, sample_end, ep_config, args.dataset,tokenizer))
         reader_thread.daemon = True
         reader_thread.start()
         

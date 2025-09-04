@@ -1,0 +1,254 @@
+## result(除float外抛弃)
+### flowgpt-qps
+#### flowgpt_qps_latency_based
+- flowgpt_qps_latency_based_3
+    - https://snapshots.raintank.io/dashboard/snapshot/5VpsooETZfywI0zp1WkUUXm9oBagkj2W
+- flowgpt_qps_latency_based_4
+    - https://snapshots.raintank.io/dashboard/snapshot/qckhFI5GaEkyMJJVYR145NtPqDivT1ps
+- flowgpt_qps_latency_based_5
+    - https://snapshots.raintank.io/dashboard/snapshot/Evzhx8SKifTmsZkUaQTjzvEPAgAVNTrJ
+- flowgpt_qps_latency_based_6
+    - https://snapshots.raintank.io/dashboard/snapshot/onc09jbPIDgOmGE8TNgLdQKoqMAgZVMt
+- flowgpt_qps_latency_based_7
+    - https://snapshots.raintank.io/dashboard/snapshot/d9pVMiqROTgNsLbHLS0sv7WtpCqMne8p
+- flowgpt_qps_latency_based_8
+    - https://snapshots.raintank.io/dashboard/snapshot/ssRQsu0tpmEs4kgRm9sw2jhaMV71QlEl
+- flowgpt_qps_latency_based_9
+    - https://snapshots.raintank.io/dashboard/snapshot/n8VaxFl7shlJ6OOsYtt65inMJnNzAeWi
+- flowgpt_qps_latency_based_11
+    - https://snapshots.raintank.io/dashboard/snapshot/WEhhbJGhFGCNGGZuv7une2QGrwNChUpu
+
+#### flowgpt_qps_sla_elrar
+- flowgpt_qps_sla_elrar_3
+    - https://snapshots.raintank.io/dashboard/snapshot/TS9bbsuHONs698T636vshfE8hN4rdTr7
+- flowgpt_qps_sla_elrar_4
+    - https://snapshots.raintank.io/dashboard/snapshot/liZnhFGPpabJRwKNfm4y9qSyVpC5L8CU
+- flowgpt_qps_sla_elrar_5
+    - https://snapshots.raintank.io/dashboard/snapshot/nSlVVB9T3ynWg6egM9VnVMUc6HMX4oT0
+- flowgpt_qps_sla_elrar_6
+    - https://snapshots.raintank.io/dashboard/snapshot/erbYZKKzTR0J1wewDsxnVvM2KgNvQlLt
+- flowgpt_qps_sla_elrar_7
+    - https://snapshots.raintank.io/dashboard/snapshot/8cICl9sGvBy9qDCCeCk0LPkSWpoingMa
+- flowgpt_qps_sla_elrar_8
+    - https://snapshots.raintank.io/dashboard/snapshot/pz05VH8kY1Rbp4EdOX4f58hcxv3IleSS
+- flowgpt_qps_sla_elrar_9
+    - https://snapshots.raintank.io/dashboard/snapshot/cYz84hMjZ5p0V5ah4gIywxD4BKLQuIWV
+- flowgpt_qps_sla_elrar_11
+    - https://snapshots.raintank.io/dashboard/snapshot/ELTDdRkuexYFHizOS4XRrezFPhJC1Cju
+
+#### flowgpt_qps_weight_based
+- flowgpt_qps_weight_based_3
+    - https://snapshots.raintank.io/dashboard/snapshot/wM8F4IfsfDS2ohWSCgHsmq32d42Iyv2j
+- flowgpt_qps_weight_based_5
+    - https://snapshots.raintank.io/dashboard/snapshot/0iK6FwgTcUNY6IinF3WPOCnOdqONPf91
+- flowgpt_qps_weight_based_7
+    - https://snapshots.raintank.io/dashboard/snapshot/0Ij5nvmaF20sLBDU13jid0dMMnTXC9fR
+- flowgpt_qps_weight_based_9
+    - https://snapshots.raintank.io/dashboard/snapshot/I0MXy208hMUSpaumXDmRckS2vsSzRt9F
+- flowgpt_qps_weight_based_11
+    - https://snapshots.raintank.io/dashboard/snapshot/FhbO4SWbRwdzgDe8kP2KL2hzTDP7QY6f
+
+#### flowgpt_qps_least_loaded
+- flowgpt_qps_least_loaded_3
+    - https://snapshots.raintank.io/dashboard/snapshot/krKK3aY3qq6Vgcbk2WxZx6yhhHDafwEn
+- flowgpt_qps_least_loaded_5
+    - https://snapshots.raintank.io/dashboard/snapshot/hLONLADxlROpaMpHohF2PrSirteZAU1m
+- flowgpt_qps_least_loaded_7
+    - https://snapshots.raintank.io/dashboard/snapshot/eQ3WqMcrCcAwSqFjvBMEJX6tq2f3xe00
+- flowgpt_qps_least_loaded_9
+    - https://snapshots.raintank.io/dashboard/snapshot/UndRgnWuqo5D82AmRe2IBZNCDpFSBTlA
+- flowgpt_qps_least_loaded_11
+    - https://snapshots.raintank.io/dashboard/snapshot/w3KtgNIa1hWY3NQKAS9IRCU4zpofJNVh
+
+### flowgpt-timestamp
+#### flowgpt_timestamp_sla_elrar
+- flowgpt_timestamp_sla_elrar_0.0_0.07
+    - https://snapshots.raintank.io/dashboard/snapshot/ghGUkoqrgpeqyP84IG5k4oc9J6pDdF8Z
+- flowgpt_timestamp_sla_elrar_0.07_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/l26nrYgGb3mn5s7W4HlyBsmt9zScqffJ
+- flowgpt_timestamp_sla_elrar_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/jMnWcMUirmuaiT3K4dK3WTIFCaiYgh6p
+- flowgpt_timestamp_sla_elrar_0.0_0.12
+    - https://snapshots.raintank.io/dashboard/snapshot/ZrpV5CMRyUF142lJxnBjP30ZZVSiRLkY
+- flowgpt_timestamp_sla_elrar_0.0_0.13
+    - https://snapshots.raintank.io/dashboard/snapshot/9UiMa5FIG8lA9x3hgDczJv1Rq3cDmVYc
+- flowgpt_timestamp_sla_elrar_0.0_0.14
+    - https://snapshots.raintank.io/dashboard/snapshot/oWEKTReDx5BacpSNxPCSjF3rLkccxzz5
+- flowgpt_timestamp_sla_elrar_0.0_0.16
+    - https://snapshots.raintank.io/dashboard/snapshot/9YEmSWwgi6x685JiMhQ89n5LfzVP5pNJ
+- flowgpt_timestamp_sla_elrar_0.0_0.19
+    - https://snapshots.raintank.io/dashboard/snapshot/VHPFLlWC1Nq5dSsqTIqbEqcMXic47MBn
+    
+#### flowgpt_timestamp_weight_based
+- flowgpt_timestamp_weight_based_0.0_0.07
+    - https://snapshots.raintank.io/dashboard/snapshot/ORkOBHLLy1Nx0qgY40ClDUpfpa7UA8kG
+- flowgpt_timestamp_weight_based_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/vOdeZhmC3h6SxKxIliuAoUBfAOljyI1Y
+- flowgpt_timestamp_weight_based_0.0_0.12
+    - https://snapshots.raintank.io/dashboard/snapshot/SuxSo6IEMsbuI8ZAc4rttYdybKmCbAWL
+- flowgpt_timestamp_weight_based_0.0_0.13
+    - https://snapshots.raintank.io/dashboard/snapshot/xkjBDJpbnVaJAk1Tt7peqRuF3eqRPf8b
+- flowgpt_timestamp_weight_based_0.0_0.14
+    - https://snapshots.raintank.io/dashboard/snapshot/bQpTvdW5Jm6QGerEDFjAxWlpLBaMEIwG
+- flowgpt_timestamp_weight_based_0.0_0.16
+    - https://snapshots.raintank.io/dashboard/snapshot/VUeaPKuqM74ZkHFn66yNiYiScb0WSHCN
+- flowgpt_timestamp_weight_based_0.0_0.19
+    - https://snapshots.raintank.io/dashboard/snapshot/W1Wyd9egVwVgdEtafHXOh18lFRbi7kQp
+
+#### flowgpt_timestamp_latency_based
+-  flowgpt_timestamp_latency_based_0.0_0.07
+    - https://snapshots.raintank.io/dashboard/snapshot/eqWuLCKHMf1GIA07621s52YPNCB4NmUB
+-  flowgpt_timestamp_latency_based_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/uBZ2BRlmFNM5r04j3ObG3TXWIfHwF1fd
+-  flowgpt_timestamp_latency_based_0.0_0.12
+    - https://snapshots.raintank.io/dashboard/snapshot/WwZos92QWa7vWTG4yvLQI4fwkBAboqNL
+-  flowgpt_timestamp_latency_based_0.0_0.13
+    - https://snapshots.raintank.io/dashboard/snapshot/xJWl7Vu5JeTwHop7xEgY2INRuh0QuwkD
+-  flowgpt_timestamp_latency_based_0.0_0.14
+    - https://snapshots.raintank.io/dashboard/snapshot/dcJwUx0OLCWIi7CVi5Jx4hY2pNihuY7q
+-  flowgpt_timestamp_latency_based_0.0_0.16
+    - https://snapshots.raintank.io/dashboard/snapshot/mUZ1dV8qgGcD9nhb6Muih0d1IYWZP247
+-  flowgpt_timestamp_latency_based_0.0_0.19
+    - https://snapshots.raintank.io/dashboard/snapshot/53W8LPBBmcOouK1iRijizdDDxuHWdxv4
+
+#### flowgpt_timestamp_least
+- flowgpt_timestamp_least_loaded_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/E7yz4lndMslbXtYkTW7Cv53KiVMIpv7n
+- flowgpt_timestamp_least_loaded_0.0_0.12
+    - https://snapshots.raintank.io/dashboard/snapshot/t9WiwjUKylMggVEY7vkTLugyZM9rjJ3S
+- flowgpt_timestamp_least_loaded_0.0_0.13
+    - https://snapshots.raintank.io/dashboard/snapshot/ejlq3Kfa62IrPBETFVOSWnxIHjUJ0exG
+- flowgpt_timestamp_least_loaded_0.0_0.14
+    - https://snapshots.raintank.io/dashboard/snapshot/2rjGzsSIX90Ji2iDoYVVFwPZIjFglUcG
+- flowgpt_timestamp_least_loaded_0.0_0.16
+    - https://snapshots.raintank.io/dashboard/snapshot/ZuU7TIiH9BDu6kGh53UZvhg42UCHOgLU
+- flowgpt_timestamp_least_loaded_0.0_0.19
+    - https://snapshots.raintank.io/dashboard/snapshot/ft1BeIQzixGLJSov9GsZkR6VdHn3LAu6
+
+### Reasoning
+- s1k_qps_sla_elrar_0.2
+    - https://snapshots.raintank.io/dashboard/snapshot/wzuN6eRD8f4KMmpu7ZNjGt8fKfSWKf6e
+
+### ShareGPT
+#### sharegpt_qps_weight_based
+- sharegpt_qps_weight_based_3_cv2_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/JzoNOjRJKkZQ5Y3iQ0EC94P1YYWOeTNC
+- sharegpt_qps_weight_based_5_cv2_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/KgAkkg7UrYwD1X93z4QTaSoY1XrRVcx3
+- sharegpt_qps_weight_based_7_cv2_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/cWNmpEORqcChpb52ogMRr4trAuP3xK0u
+- sharegpt_qps_weight_based_9_cv2_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/FRo4Z3sFHirmjaAZmCvAWSww9qklxxNO
+
+- sharegpt_qps_weight_based_5_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/qDmV4L0goMFelTedldO7j1pc5wtCHrXg
+- sharegpt_qps_weight_based_7_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/ehKkQ8ZGFgZzi3m244EY3p64aG3XeWJH
+- sharegpt_qps_weight_based_9_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/A0tCNxHPZ0mQO2l31Xu6jw2HdnWjKENm
+- sharegpt_qps_weight_based_12_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/XWizDyjKM73UdJx7PgAzdJo7GBHg462Y
+
+#### sharegpt_qps_latency_based
+
+- sharegpt_qps_latency_based_5_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/aGUMi2LvbL0wmedJWUvlMFUT1RogMF8c
+- sharegpt_qps_latency_based_7_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/kgk1AVkiEq3bH6kRBztrs6YNjgLamXQZ
+- sharegpt_qps_latency_based_9_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/flYoDu6LejrKs7gS8kYO0vDJyOXHjR08
+- sharegpt_qps_latency_based_12_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/96xmEYlrCmypB5U2YVwQZ8dr2nzm1Wly
+
+#### sharegpt_qps_sla_elrar
+- sharegpt_qps_sla_elrar_5_cv2_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/sdcpHJpxCus3aamjNWHHlT4zyJeN6yio
+- sharegpt_qps_sla_elrar_7_cv2_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/QSuz2akkBZ8MEiy61nqf8QN9m8CF2are
+- sharegpt_qps_sla_elrar_9_cv2_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/lvPR5kvoGlesw74iRBR3jF4LRnUNOcR5
+- sharegpt_qps_sla_elrar_12_cv2_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/llXnxNi6iSgpFQtvuHMiyIHxRzt32xFU
+- sharegpt_qps_sla_elrar_12_cv1.5_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/ocfFT4NiTkz8zM08SkvTr2xaPASzkjsM
+
+- sharegpt_qps_sla_elrar_5_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/7RvCceHEQECya0L4Npj63FoXgBvNeKzX
+- sharegpt_qps_sla_elrar_7_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/90X0KMkYLWmvLUfWlrPnBmfVCnjye9Ke
+- sharegpt_qps_sla_elrar_9_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/Pw1ixGtAiHfAV1vuvj1XzgMU421Tufon
+- sharegpt_qps_sla_elrar_12_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/llZRRMZJFbqN4WvxWuJKTZBzV5WmGyfx
+- sharegpt_qps_sla_elrar_14_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/Nf1CembT0ODsrhRjAYOvLw8IgW7fHHo6
+
+#### sharegpt_qps_least_loaded
+- sharegpt_qps_least_loaded_5_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/xNawF9dBQgaNHsIzt0zvvUs5sVoY8TOj
+- sharegpt_qps_least_loaded_7_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/0yywqPLp5fKgeuLzTAr1FKdAY91HVG0L
+- sharegpt_qps_least_loaded_9_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/de4apQta5rBy96k9B2m2hXpuB3iS3WCA
+- sharegpt_qps_least_loaded_12_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/ZzpyDLsXRHZVk06NdoazdbyglRHghTWv
+
+### Coder
+#### coder_qps_least_loaded
+- coder_qps_least_loaded_12_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/2a2DMdlZfRJH7HHiMJL39840pcsiq35H
+- coder_qps_least_loaded_9_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/khm3UnldY1u8wxLmIAy07mjaWUDGuwbc
+- coder_qps_least_loaded_7_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/8Y43bTFNeWfk6zGeCACxXwxIXLxAPlSQ
+- coder_qps_least_loaded_5_cv1_0.0_0.1
+    - 
+
+#### coder_qps_weight_based
+- coder_qps_weight_based_3_cv2_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/IwycTJU8WSyz5vWpPVVD3fOxOxIysMHr
+- coder_qps_weight_based_5_cv2_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/y9bPF0JvfIKJTlvKLjgBNAhLwSw3qmLA
+- coder_qps_weight_based_7_cv2_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/KL1vCM1KbnRDcf85Ifnf82G1SQROJfWm
+- coder_qps_weight_based_9_cv2_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/rinIz36wBsN13oS97T7OMm899YrIIkcb
+
+- coder_qps_weight_based_5_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/52MkgEKwWh8vIarDE2WRe6tEdG5691e2
+- coder_qps_weight_based_7_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/SnN1IgdKy7U2Mt9HzMoxvqrsdk90z2WP
+- coder_qps_weight_based_9_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/qxkscoAo9FJDiUIE6XQvlEYs55MoUUPE
+- coder_qps_weight_based_12_cv1_0.0_0.2
+    - https://snapshots.raintank.io/dashboard/snapshot/mEgwFpKZRGPmiteCN1QQH8JWCN44nWwH
+
+#### coder_qps_sla_elrar
+- coder_qps_sla_elrar_5_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/OyQNkO1NscPSX0zUJiIuaXNKC2sCB7Sj
+- coder_qps_sla_elrar_7_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/T9mP9e069X7unNBdFFuQfDFHnLvVbvKF
+- coder_qps_sla_elrar_9_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/pl6zZjRzwPiNu4BU1j4zOlW8vjtpq8CA
+- coder_qps_sla_elrar_12_cv1_0.0_0.2
+    - https://snapshots.raintank.io/dashboard/snapshot/v9NgKcembhEE6n02UngkRZablGG9kVdz
+
+#### coder_qps_latency_based
+
+- coder_qps_latency_based_5_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/mXVhIMc4tcwNyxRTd3jdW8xlg6RL1QAy
+- coder_qps_latency_based_7_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/Dwsv3T7SAXaTxzATtLhnOOT4aA48qHrY
+- coder_qps_latency_based_9_cv1_0.0_0.1
+    - https://snapshots.raintank.io/dashboard/snapshot/2bkMVo2Okss00Sh6lO5GD77YtRFL4kd7
+- coder_qps_latency_based_12_cv1_0.0_0.2
+    - https://snapshots.raintank.io/dashboard/snapshot/VfuFkqotDC4ZztCEjncCK90tc0sLZwus
+
+### Reasoning
+#### reasoning_qps_weight_based
+- reasoning_qps_weight_based_0.9_cv0.0_0.0_0.5
+    - https://snapshots.raintank.io/dashboard/snapshot/fgJm58XbI4wWQCf2qVZQxuHxGLSoPfcZ
+- reasoning_qps_weight_based_0.6_cv0.0_0.0_0.5
+    - https://snapshots.raintank.io/dashboard/snapshot/7XDxEcuG134XcFve40R2HKNYUhbisG2T
+- reasoning_qps_weight_based_0.3_cv0.0_0.0_0.5
+    - https://snapshots.raintank.io/dashboard/snapshot/Yi7N3GInumH8E8T8CDRy7oP9HEQtLlmC
