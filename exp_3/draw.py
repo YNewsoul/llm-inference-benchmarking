@@ -7,7 +7,8 @@ import re
 import numpy as np
 from csv_process import csv_process_file,csv_process_dir
 
-def main(args):
+
+def draw_image(dir,e2e_slo):
 
     # 算法名称及其对应配置
     algorithm_config = {
@@ -24,7 +25,7 @@ def main(args):
         {'name': 'p90', 'label': 'P90 latency(s)', 'suffix': 'p90'},
         {'name': 'p95', 'label': 'P95 latency(s)', 'suffix': 'p95'},
         {'name': 'p99', 'label': 'P99 latency(s)', 'suffix': 'p99'},
-        {'name': 'slo_attainment', 'label': f'SLO attainment({args.e2e_slo}s) (%)', 'suffix': 'slo', 'y_lim': (0, 100)}
+        {'name': 'slo_attainment', 'label': f'SLO attainment({e2e_slo}s) (%)', 'suffix': 'slo', 'y_lim': (0, 100)}
     ]
 
     # 初始化数据存储结构：按算法名称组织，存储不同指标的数值列表
@@ -35,7 +36,7 @@ def main(args):
             'p50': [], 'p90': [], 'p95': [], 'p99': [], 'slo_attainment': []
         }
 
-    dataset = os.path.basename(args.dir)
+    dataset = os.path.basename(dir)
 
     # 采样率模式处理逻辑
     if dataset == 'Flowgpt-timestamp' or dataset == 'Flowgpt-qps':
@@ -46,7 +47,7 @@ def main(args):
 
         # 遍历每种算法目录
         for alg_name, _ in algorithm_config.items():
-            alg_dir = os.path.join(args.dir, alg_name)
+            alg_dir = os.path.join(dir, alg_name)
             # 跳过不存在算法
             if not os.path.isdir(alg_dir):
                 continue
@@ -55,6 +56,7 @@ def main(args):
             for dir_name in os.listdir(alg_dir):
                 dir_path = os.path.join(alg_dir, dir_name)
                 if not os.path.isdir(dir_path):
+
                     continue
                 
                 x_metrics = 0
@@ -85,7 +87,7 @@ def main(args):
                     continue
 
                 try:
-                    metrics = csv_process_dir(dir_path, args.e2e_slo)
+                    metrics = csv_process_dir(dir_path, e2e_slo)
                     data[alg_name]['x_metrics'].append(x_metrics)
                     data[alg_name]['p50'].append(metrics['p50'])
                     data[alg_name]['p90'].append(metrics['p90'])
@@ -116,10 +118,11 @@ def main(args):
 
     else:
         for alg_name, _ in algorithm_config.items():
-            dir_path = os.path.join(args.dir, alg_name)
+            dir_path = os.path.join(dir, alg_name)
             
             # 判断是否存在算法目录
             if not os.path.exists(dir_path):
+                print(234234)
                 continue
 
             csv_files = glob.glob(os.path.join(dir_path, '*.csv'))
@@ -141,7 +144,7 @@ def main(args):
                     continue
 
                 try:
-                    metrics = csv_process_file(file, args.e2e_slo)
+                    metrics = csv_process_file(file, e2e_slo)
                     algorithm_metrics.append((qps, metrics['p50'], metrics['p90'], metrics['p95'], metrics['p99'], metrics['slo_attainment']))
                 except Exception as e:
                     continue
@@ -158,11 +161,12 @@ def main(args):
     # 生成图表
     for metric in metrics_config:
         plot_metric(data, metric['name'], metric['label'], metric['suffix'],
-                    algorithm_config, args, dataset, y_lim=metric.get('y_lim'))
+                    algorithm_config,dataset, y_lim=metric.get('y_lim'))
 
-def plot_metric(data, metric_name, y_label, output_suffix, algorithm_config, args,dataset, y_lim=None):
+def plot_metric(data, metric_name, y_label, output_suffix, algorithm_config,dataset, y_lim=None):
     plt.figure(figsize=(6, 5))
-
+    
+    plt.subplots_adjust(left=0.15, right=0.95, bottom=0.13, top=0.95)
     for alg_name, config in algorithm_config.items():
         name = config['name']
         alg_data = data.get(alg_name, {})
@@ -183,21 +187,21 @@ def plot_metric(data, metric_name, y_label, output_suffix, algorithm_config, arg
     # elif dataset in ['Flowgpt-qps', 'Coder', 'ShareGPT']:
     #     x_label = 'QPS'
     # plt.xlabel(x_label, fontsize=20)
-    plt.ylabel(y_label, fontsize=20)
+    # plt.ylabel(y_label, fontsize=20)
 
-    
     plt.grid(True, linestyle='--', alpha=0.7,linewidth=1.5)
-    plt.legend(fontsize=20, loc='best') # 图例
-    plt.xticks(unique_data_points, fontsize=30)
-    plt.yticks(fontsize=30)
+    # plt.legend(fontsize=20, loc='best') # 图例
+    plt.xticks(unique_data_points, fontsize=25)
+
+    plt.yticks(fontsize=25)
     if y_lim:
         plt.ylim(y_lim)
-    plt.tight_layout()
+    # plt.tight_layout()
 
     output_dir =  f"./picture/{dataset}"
     os.makedirs(output_dir, exist_ok=True)
-    output_path =f"{output_dir}/{dataset}_comparison_{output_suffix}.png"
-    plt.savefig(output_path, dpi=900, bbox_inches='tight')
+    output_path =f"{output_dir}/{dataset}_{output_suffix}.png"
+    plt.savefig(output_path, dpi=900)
     plt.close()
     print(f'图表已保存至: {os.path.abspath(output_path)}')
 
@@ -208,4 +212,4 @@ if __name__ == '__main__':
                         help='处理的数据集路径')
     parser.add_argument('--e2e-slo', type=float, default=9.5)
     args = parser.parse_args()
-    main(args)
+    draw_image(args.dir,args.e2e_slo)
